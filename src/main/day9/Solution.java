@@ -1,18 +1,23 @@
 package main.day9;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public String simplifyPath(String path) {
-        String result = null;
-        if (path.contains("//")) {
-            result = path.replace("//", "/");
+        String[] parts = path.split("/+");
+        List<String> pathParts = new ArrayList<>();
+        for (String part : parts) {
+            if (part.equals("") || part.equals(".")) {
+                continue;
+            } else if (part.equals("..")) {
+                if (!pathParts.isEmpty()) {
+                    pathParts.remove(pathParts.size() - 1);
+                }
+            } else {
+                pathParts.add(part);
+            }
         }
-        if (result.contains("/../")) {
-            result.replace("/../", "/");
-        }
-        return result;
-        //path.endsWith("/") ? path.substring(0, path.length() - 1) : null;
+        return "/" + String.join("/", pathParts);
     }
 }
