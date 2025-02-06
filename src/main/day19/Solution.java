@@ -15,7 +15,7 @@ class Solution {
                 substring = s.substring(leftItem + 1);
                 rightItem = leftItem + 1 + substring.indexOf(c);
             } else {
-                ints[i] = Math.abs(distLeft < distRight ? distLeft : distRight);
+                ints[i] = Math.abs(Math.min(distLeft, distRight));
             }
         }
         return ints;
