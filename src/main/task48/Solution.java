@@ -34,4 +34,3 @@ class Solution {
         return Integer.parseInt(result.toString());
     }
 }
-
