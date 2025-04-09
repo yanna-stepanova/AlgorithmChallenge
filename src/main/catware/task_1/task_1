@@ -1,0 +1,9 @@
+Task 1
+
+If we list all natural numbers under 10 that are multiples of 3 or 5
+then we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Create a function that finds the sum of the multiples given a parameter
+that defines the upper limit of the numbers:
+
+     int findMultiplier(int allNumbersLessThan) {
+     }
